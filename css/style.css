@@ -1,0 +1,352 @@
+/* Table of Content */
+/* 
+1.General CSS
+2.Login Page
+3.Header
+
+*/
+
+/* 1.General CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+
+    /* backgrond color */
+    --primary-color:rgb(157, 153, 153);
+    --secondary-color:white;
+
+    /* text color */
+    --text-color:black;
+    --text-color-secondary:white;
+
+    /* font family */
+    --font-family: 'Poppins', sans-serif;
+    --font-family-secondary: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/* 2.Login Page */
+#loginbody{
+    background: url(../images/background.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    background-color: rgba(255,255,255,0.2);
+    border-radius:20px ;
+    width: 480px;
+    backdrop-filter: blur(20px);
+    padding: 20px 30px 15px 40px;
+}
+.login h1{
+    color:var(--text-color);
+    text-align: center;
+    font-size:38px;
+    color: white;
+}
+.login .input-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    padding: 15px;
+    outline: none;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    caret-color: white;
+    color: white;
+    font-size: 18px;
+}
+.input-box input::placeholder{
+    font-size: 17px;
+    color: white;
+}
+.input-box i{
+    color: white;
+    font-size:20px ;
+    position: absolute;
+    top: 25px;
+    right: 40px;    
+}
+.login .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding:20px 30px;
+    letter-spacing: 1px;
+}
+.remember-forgot input[type="checkbox"]{
+   accent-color: white;
+}
+.remember-forgot a{
+    color: white;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 390px;
+    height: 45px;
+    margin-left:15px ;
+    font-size: 20px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    border-radius: 40px;
+    outline: none;
+    border: none; 
+}
+.register-box{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin:15px;
+    word-spacing: 2px;
+}
+.register-box a{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.register-box a:hover{
+    text-decoration: underline;
+}
+/* making login page responsive */
+@media screen and(max-width:600px) {
+    .login{
+        width: 80%;
+        height: 80%;
+    }
+    .login h1{
+        font-size: 30px;
+    }
+    .input-box input{
+        padding: 12px;
+        font-size: 15px;
+    }
+    button{
+        font-size:18px;
+        height: 40px;
+    } 
+}  
+/* 3.Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    padding: 0 10%;
+    box-shadow: 0 4px 6px gray;
+}
+ /* 3.1 Header Left-logo */
+ .left-logo{
+    flex:1;
+ }
+.left-logo a{
+    font-size:45px;
+    color: blue;
+    font-weight: 600;
+}
+/* 3.2 Header navbar */
+.navbar{
+    flex:2;
+    display: flex;
+    padding: 10px;
+}
+.navbar div{
+    margin-right: 30px;
+}
+
+/* 3.2.1 Header Navbar >Search Bar */
+.navbar .search{
+    position: relative;
+    width: 400px;
+    height: 35px;
+}
+.navbar .search input{
+     width: 100%;
+     height: 100%;
+     border: none;
+     outline: none;
+     border-radius: 5px;
+     border: 1px solid rgb(179, 179, 179);
+     padding:10px;
+     font-size: 18px;
+     caret-color: rgb(173, 168, 168);
+    background-color: rgb(228, 223, 223); 
+}
+.search input:hover{
+    background-color: white;
+    color: gray;
+}
+.search i{
+    font-size: 23px;
+    color: gray;
+    position: absolute;
+    right:20px;
+    top: 7px;
+}
+/* 3.2.2 Header Navbar> Login Options */
+.login-option{
+    position: relative;
+}
+.main-menu > a{
+    color: black;
+    font-size:25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-menu > a> i{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1) ;
+    width: 300px;
+    padding: 25px;
+}
+.main-menu:hover .sub-menu{
+    display: block;
+    box-shadow: rgb(170, 169, 169);
+}
+.sub-menu li{
+    padding: 5px;
+}
+.sub-menu > li > p{
+     font-size: 20px;
+     color: black;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.sub-menu > li>p>a{
+    font-size: 25px;
+    color: blue;
+    font-weight:bold;
+}
+.sub-menu > li > p > a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+.sub-menu li a{
+    font-size: 22px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.sub-menu li a i{
+    font-size: 23px;
+    margin-right: 5px;
+}
+/* 3.2..3 header>navbar>cart */
+.cart-box{
+    flex: 0;
+    position: relative;
+}
+.cart-box a{
+    color: black;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+.cart-box a i{
+    margin-right: 5px;
+}
+/* Making Header Responsive */
+@media (max-width: 900px) {
+    header{
+        padding: 0 5%;
+    }
+    .left-logo a{
+        font-size:40px ;
+    }
+    .navbar .search{
+        width: 200px;
+    }
+    .main-menu > a{
+        font-size: 18px;
+    }
+    .cart-box a{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:480px) {
+    header{
+        padding: 0 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left-logo a{
+        font-size: 35px;
+        display: flex;
+    }
+    .navbar{
+        display: flex;
+        padding: 5px;
+    }
+    .navbar .search{
+        width: 100px;
+    }
+    .navbar .search > a > input{
+        visibility: hidden;
+    }
+    .navbar .search > a> i{
+        visibility: visible;
+        font-size: 30px;
+        top: 0;
+        right:0;
+        left: 60%;
+        color: black;
+    }
+    .main-menu > a{
+        font-size: 14px;
+    }
+    .cart-box a{
+        font-size: 14px;
+    }
+}
+/* 4.section */
+section{
+    height: 100vh;
+    background-color: rgb(176, 176, 176,0.4);
+}
+/* 4.Footer */
+footer{
+    min-height: 70px;
+    background-color: rgba(255,255,255,0.2);
+    padding: 10px;
+}
+footer h2{
+    text-align: center;
+}
+
+
+
+
+
+
